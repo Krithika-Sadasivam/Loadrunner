@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "allowJs": true,
+    "checkJs": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node16",
+    "types": ["node"],
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "module": "Node16",
+    "target": "es2020",
+    "lib": ["es2020"]
+  },
+  "include": ["**/*"],
+  "exclude": ["node_modules", "dist", "target"]
+}

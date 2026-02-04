@@ -1,0 +1,180 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "echo",
+            "type": "shell",
+            "command": "echo Hello"
+        },
+        {
+          "label": "Node Run",
+          "type": "process",
+          "presentation": {
+            "panel": "new"
+          },
+          "command": "node",
+          "windows": {
+            "command": "node.exe"
+          },
+          "osx": {
+            "command": "node"
+          },
+          "linux": {
+            "command": "node"
+          },
+          "args": [
+            "${fileBasename}"
+          ]
+        },
+        {
+          "label": "Swagger Parse",
+          "type": "process",
+          "presentation": {
+            "panel": "new"
+          },
+          "command": "node",
+          "windows": {
+            "command": "node.exe"
+          },
+          "osx": {
+            "command": "node"
+          },
+          "linux": {
+            "command": "node"
+          },
+          "args": [
+            "${workspaceFolder}/app.swaggerparse.js",
+            "${relativeFile}"
+          ]
+        },
+        {
+            "label": "DevWeb Single Run",
+            "type": "process",
+            "presentation": {
+              "panel": "new"
+            },
+            "command": "${env:DevWeb_PATH}/DevWeb",
+            "windows": {
+              "command": "${env:DevWeb_PATH}\\DevWeb.exe"
+            },
+            "osx": {
+              "command": "${env:DevWeb_PATH}/DevWeb"
+            },
+            "linux": {
+              "command": "${env:DevWeb_PATH}/DevWeb"
+            },
+            "args": [
+              "-ide=vscode",
+              "${fileDirname}"
+            ]
+          },
+          {
+            "label": "DevWeb Load Run",
+            "type": "process",
+            "presentation": {
+              "panel": "new"
+            },
+            "command": "${env:DevWeb_PATH}/DevWeb",
+            "windows": {
+              "command": "${env:DevWeb_PATH}\\DevWeb.exe"
+            },
+            "osx": {
+              "command": "${env:DevWeb_PATH}/DevWeb"
+            },
+            "linux": {
+              "command": "${env:DevWeb_PATH}/DevWeb"
+            },
+            "args": [
+              "-mode=load",
+              "-ide=vscode",
+              "${fileDirname}"
+            ]
+          },
+          {
+            "label": "DevWeb Debug Run",
+            "type": "process",
+            "command": "${env:DevWeb_PATH}/DevWeb",
+            "windows": {
+              "command": "${env:DevWeb_PATH}\\DevWeb.exe"
+            },
+            "osx": {
+              "command": "${env:DevWeb_PATH}/DevWeb"
+            },
+            "linux": {
+              "command": "${env:DevWeb_PATH}/DevWeb"
+            },
+            "isBackground": true,
+            "presentation": {
+              "panel": "new"
+            },
+            "args": [
+              "-inspect",
+              "-ide=vscode",
+              "${workspaceRoot}"
+            ]
+          },
+          {
+            "label": "OfflineGenerator",
+            "type": "process",
+            "presentation": {
+              "panel": "new"
+            },
+            "command": "${env:DevWeb_PATH}/OfflineGenerator",
+            "windows": {
+              "command": "${env:DevWeb_PATH}\\OfflineGenerator.exe"
+            },
+            "osx": {
+              "command": "${env:DevWeb_PATH}/OfflineGenerator"
+            },
+            "linux": {
+              "command": "${env:DevWeb_PATH}/OfflineGenerator"
+            },
+            "args": [
+              "-mode=har",
+              "-level=pages",
+              "${file}",
+              "${relativeFileDirname}/${fileBasenameNoExtension}"
+            ]
+          },
+        {
+          "label": "DB: Connect & List Tables",
+          "type": "process",
+          "presentation": { "panel": "new" },
+          "command": "node",
+          "windows": { "command": "node.exe" },
+          "args": [
+            "${workspaceFolder}/scripts/connect_devwebdb.js",
+            "${workspaceFolder}/test/swagger-exam/results/devWebDB.db",
+            "${input:dbRowLimit}"
+          ]
+        },
+        {
+          "label": "DB: Metrics",
+          "type": "process",
+          "presentation": { "panel": "new" },
+          "command": "node",
+          "windows": { "command": "node.exe" },
+          "args": [
+            "${workspaceFolder}/scripts/devweb_metrics.js",
+            "${workspaceFolder}/test/swagger-exam/results/devWebDB.db"
+          ]
+        },
+        {
+          "label": "DB: Run DB Steps",
+          "dependsOn": ["DB: Connect & List Tables", "DB: Metrics"],
+          "dependsOrder": "sequence",
+          "type": "shell",
+          "problemMatcher": []
+        }
+    ],
+    "inputs": [
+      {
+        "id": "dbRowLimit",
+        "type": "promptString",
+        "description": "Number of rows to show per table (use 'all' for full tables)",
+        "default": "5"
+      }
+    ]
+}

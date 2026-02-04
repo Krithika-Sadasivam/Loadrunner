@@ -1,0 +1,91 @@
+[23:37:35.77] Debug: Running build Release_25.1.0_1543 on windows
+[23:37:35.86] Info: Starting initialize.
+[23:37:35.86] Info: Ending initialize.
+[23:37:35.86] Info: Starting iteration 1.
+[23:37:35.87] Debug: Parameter value1 (sequential) is taken from row 1
+[23:37:35.87] Debug: Parameter Substitution: 'value1 = 0'	(.\main.js:12:33)
+[23:37:35.87] Debug: Parameter value2 (same as value1) is taken from row 1
+[23:37:35.87] Debug: Parameter Substitution: 'value2 = -Z-E-R-O-'	(.\main.js:13:30)
+[23:37:35.88] Info: Transaction 'NumberToWords' started.	(.\main.js:26:12)
+[23:37:35.88] Warning: The 'generateSnapshots' key in runtime settings is deprecated, use the 'saveSnapshots' key instead. Please update the rts.yml file in your script folder.
+[23:37:35.88] Warning: 'replay.saveSnapshots' key value never will be used.
+[23:37:35.88] Warning: The 'generateSnapshots' key in runtime settings is deprecated, use the 'saveSnapshots' key instead. Please update the rts.yml file in your script folder.
+[23:37:35.88] Warning: 'replay.saveSnapshots' key value never will be used.
+[23:37:35.88] Info: WebRequest [Id: 1] 'http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON' registered to send (sync).	(.\main.js:35:8)
+[23:37:35.89] Trace: Request [Id: 1] 'http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON': 
+POST /webservicesserver/Numberconversion.wso/NumberToWords/JSON HTTP/1.1
+Host: www.dataaccess.com
+User-Agent: Go-http-client/1.1
+Content-Length: 14
+Content-Type: application/json; charset=utf-8
+Foo: bar
+Accept-Encoding: gzip
+
+{"ubiNum":"0"}
+[23:37:35.89] Debug: Request [Id: 1]: POST 'http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON' started.
+[23:37:35.97] Trace: Request [Id: 1]: Connecting tcp socket to host 52.7.155.169:80.
+[23:37:36.04] Trace: Request [Id: 1]: Connection to host 52.7.155.169:80 done.
+[23:37:36.04] Trace: Request [Id: 1]: New connection from 192.168.68.103:3019 to 52.7.155.169:80 in 68 ms.
+[23:37:36.15] Debug: Request [Id: 1]: POST 'http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON' done. Status 301 Moved Permanently. HTTP/1.1
+[23:37:36.15] Trace: Response 'http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON': 
+HTTP/1.1 301 Moved Permanently
+Content-Length: 207
+Access-Control-Allow-Origin: *
+Content-Security-Policy: default-src * data: 'unsafe-inline' 'unsafe-eval'; form-action 'self'; frame-ancestors 'self';
+Content-Type: text/html; charset=UTF-8
+Date: Tue, 03 Feb 2026 04:37:35 GMT
+Location: https://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON
+Permissions-Policy: interest-cohort=(); fullscreen=(self)
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Server
+Strict-Transport-Security: max-age=15768000;includeSubdomains
+Tdm-Reservation: 1
+X-Content-Type-Options: nosniff
+X-Powered-By: ASP.NET
+X-Robots-Tag: noai, noimageai
+
+
+[23:37:36.15] Debug: Request 'http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON' was redirected to 'https://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON'
+[23:37:36.15] Trace: Request [Id: 1] 'https://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON': 
+GET /webservicesserver/Numberconversion.wso/NumberToWords/JSON HTTP/1.1
+Host: www.dataaccess.com
+User-Agent: Go-http-client/1.1
+Content-Type: application/json; charset=utf-8
+Foo: bar
+Referer: http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON
+Accept-Encoding: gzip
+
+
+[23:37:36.15] Debug: Request [Id: 1]: GET 'https://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON' started.
+[23:37:36.15] Trace: Request [Id: 1]: Connecting tcp socket to host 52.7.155.169:443.
+[23:37:36.19] Trace: Request [Id: 1]: Connection to host 52.7.155.169:443 done.
+[23:37:36.55] Trace: TLS session version: 1.2 cipher: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+[23:37:36.55] Trace: Request [Id: 1]: New connection from 192.168.68.103:3020 to 52.7.155.169:443 in 37 ms.
+[23:37:36.67] Debug: Request [Id: 1]: GET 'https://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON' done. Status 500 Internal Server Error. HTTP/2.0
+[23:37:36.67] Trace: Response 'https://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON': 
+HTTP/2.0 500 Internal Server Error
+Content-Length: 959
+Access-Control-Allow-Origin: *
+Cache-Control: private, max-age=0
+Content-Security-Policy: default-src * data: 'unsafe-inline' 'unsafe-eval'; form-action 'self'; frame-ancestors 'self';
+Content-Type: text/html; charset=utf-8
+Date: Tue, 03 Feb 2026 04:37:36 GMT
+Permissions-Policy: interest-cohort=(); fullscreen=(self)
+Referrer-Policy: strict-origin-when-cross-origin
+Server: Server
+Strict-Transport-Security: max-age=15768000;includeSubdomains
+Tdm-Reservation: 1
+Web-Service: DataFlex 19.1
+X-Content-Type-Options: nosniff
+X-Powered-By: ASP.NET
+X-Robots-Tag: noai, noimageai
+
+
+[23:37:36.67] Trace: 'http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON' request redirect urls: https://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON
+[23:37:36.67] Info: WebRequest [Id: 1] 'http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON' completed. (2 request(s) sent, 1606 bytes downloaded)	(.\main.js:35:8)
+[23:37:36.67] Trace: 'http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON' response body: <html><body bgcolor="FFFFFF"><table width="410" cellpadding="3" cellspacing="5">  <tr>        <td align="left" valign="middle" width="360">	<h1 style="COLOR:FF0000; FONT: 13pt/15pt verdana"><!--Problem-->Web Service Error</h1>    </td>  </tr>  <tr>    <td width="400" colspan="2">	<font style="COLOR:000000; FONT: 8pt/11pt verdana">There is a problem with the page you are trying to reach and it cannot be displayed.</font></td>  </tr>  <tr>    <td width="400" colspan="2">	<font style="COLOR:000000; FONT: 8pt/11pt verdana">	<hr color="#C0C0C0" noshade>	<p>Technical Information (for support personnel)</p><ul><li>More information:<br><b>Error processing request: Missing parameter 'ubiNum'</b></li></ul>    </font></td>  </tr>  <tr>    <td width="400" colspan="2">	<hr color="#C0C0C0" noshade>    <h2 style="font:8pt/11pt verdana; color:000000">HTTP 500 - Internal server error<br>    DataFlex Web Application Server</h2>  </td>  </tr></table></body></html>
+[23:37:36.71] Error (-101947): Vuser action was stopped after receiving HTTP error: 'HTTP Status-Code=500 for http://www.dataaccess.com/webservicesserver/Numberconversion.wso/NumberToWords/JSON'.	(.\main.js:35:8)
+[23:37:36.71] Info: Transaction 'NumberToWords' ended with 'Failed' status (Duration: 829 ms, ThinkTime: 0 ms).
+[23:37:36.71] Info: Ending iteration 1.
+[23:37:36.71] Info: Starting finalize.
+[23:37:36.71] Info: Ending finalize.
